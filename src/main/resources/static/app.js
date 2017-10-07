@@ -57,6 +57,7 @@
   source.addEventListener('message', event => {
     const response = JSON.parse(event.data);
     console.log('Received:', response);
+    addPoint(response);
   });
 
 })();
