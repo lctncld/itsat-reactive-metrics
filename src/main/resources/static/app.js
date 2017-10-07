@@ -53,6 +53,10 @@
     chart.update();
   };
 
-  // TODO: Add an EventSource
+  const source = new EventSource('http://localhost:8080/requestMetrics');
+  source.addEventListener('message', event => {
+    const response = JSON.parse(event.data);
+    console.log('Received:', response);
+  });
 
 })();
